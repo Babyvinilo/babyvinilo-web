@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baby Vinilo — Personalización hecha a mano</title>
+  <meta name="description" content="Baby Vinilo: personalización textil, tazas y complementos hechos a mano para bebé y hogar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-bar">
+      <a href="#hero" class="brand">
+        <img src="images/logo-babyvinilo.png" class="brand-logo" alt="Baby Vinilo">
+        <div class="brand-col">
+          <span class="brand-name">Baby Vinilo</span>
+          <span class="brand-tag">Personalización y hecho a mano</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#about">Nosotros</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+        <a id="navWhatsApp" class="btn">WhatsApp</a>
+      </nav>
+      <button id="burger" class="burger" aria-label="Abrir menú">☰</button>
+    </div>
+    <div id="mobile" class="mobile">
+      <a href="#about">Nosotros</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+      <a id="mobileWhatsApp" class="btn">WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 id="heroTitle">Detalles hechos a mano,<br><span class="accent">pensados para durar</span></h1>
+        <p id="heroDesc">...</p>
+        <div class="cta-row">
+          <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+          <a id="ctaPresupuesto" class="btn btn-ghost">Pedir presupuesto</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img id="heroImage" src="" alt="Imagen principal">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section soft">
+    <div class="container about-grid">
+      <div>
+        <h2>Qué hacemos</h2>
+        <p class="lead">Un taller pequeño con mucho mimo: trabajamos por encargo para particulares, peñas, escuelas y empresas.</p>
+        <ul id="services" class="checks"></ul>
+      </div>
+      <div class="card note">
+        <h3>Cómo pedir</h3>
+        <ol>
+          <li>Envíanos tu idea por WhatsApp.</li>
+          <li>Te pasamos opciones y presupuesto.</li>
+          <li>Producimos y te avisamos para recoger o envío.</li>
+        </ol>
+        <a id="aboutWhatsApp" class="btn btn-primary wide">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Catálogo destacado</h2>
+        <a id="ctaCatalogo" class="btn btn-primary">Pedir presupuesto</a>
+      </div>
+      <div id="products" class="grid three"></div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section soft">
+    <div class="container">
+      <h2>Galería</h2>
+      <div id="gallery" class="grid three gallery"></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container contact-grid">
+      <div class="card">
+        <h2>Contacto</h2>
+        <ul class="contact">
+          <li><strong>WhatsApp:</strong> <a id="waNumber">+34 600 000 000</a></li>
+          <li><strong>Email:</strong> <a id="emailLink" href="mailto:pedidos@babyvinilo.es">pedidos@babyvinilo.es</a></li>
+          <li><strong>Instagram:</strong> <a id="igLink" href="https://www.instagram.com/" target="_blank" rel="noopener">@babyvinilo</a></li>
+          <li><strong>Ubicación:</strong> <span id="addressTxt">España</span></li>
+        </ul>
+        <a id="ctaWhatsApp" class="btn btn-primary wide">Hablar por WhatsApp</a>
+      </div>
+      <form class="card form" action="mailto:pedidos@babyvinilo.es" method="post" enctype="text/plain">
+        <label>Nombre<input name="nombre" required placeholder="Tu nombre"></label>
+        <label>Email<input type="email" name="email" required placeholder="tucorreo@ejemplo.com"></label>
+        <label>Mensaje<textarea name="mensaje" rows="4" required placeholder="Cuéntanos tu idea"></textarea></label>
+        <button type="submit" class="btn btn-primary">Enviar consulta</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footbar">
+      <p>© <span id="year"></span> <span class="brand-name">Baby Vinilo</span> — Hecho a mano en España.</p>
+      <div class="links">
+        <a href="#hero">Arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

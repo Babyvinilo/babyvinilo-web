@@ -1,0 +1,49 @@
+{
+  "brand": {
+    "name": "Baby Vinilo",
+    "slogan": "Personalización y hecho a mano",
+    "phone": "+34 600 000 000",
+    "instagram": "https://www.instagram.com/",
+    "email": "pedidos@babyvinilo.es",
+    "address": "España"
+  },
+  "hero": {
+    "title": "Detalles hechos a mano,",
+    "title_accent": "pensados para durar",
+    "description": "Personalizamos **camisetas, tazas y accesorios** y confeccionamos **complementos para bebé** como mochilas de carrito, baberos o estuches. Todo bajo pedido y con cariño.",
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop"
+  },
+  "services": [
+    "Personalización textil (vinilo, DTF y bordado)",
+    "Sublimación en tazas, termos y regalos",
+    "Hecho a mano para bebé y niño: mochilas, baberos, estuches…"
+  ],
+  "products": [
+    {
+      "title": "Camisetas personalizadas",
+      "desc": "Vinilo, DTF o bordado. Para equipos, peñas y eventos.",
+      "price": "desde 14€",
+      "image": "https://images.unsplash.com/photo-1520975922284-9f8a5b0e5156?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "title": "Tazas y termos",
+      "desc": "Sublimación de alta calidad. Regalos para profes y empresa.",
+      "price": "desde 10€",
+      "image": "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop"
+    },
+    {
+      "title": "Accesorios bebé y niño",
+      "desc": "Mochilas, baberos, estuches y coleteros hechos a mano.",
+      "price": "a medida",
+      "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
+    }
+  ],
+  "gallery": [
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1465406325902-5fddaf2bae4f?q=80&w=1200&auto=format&fit=crop"
+  ]
+}
