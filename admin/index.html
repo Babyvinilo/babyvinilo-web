@@ -8,8 +8,9 @@
     <!-- Widget de login de Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Netlify CMS (versión estable clásica) -->
-    <script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
+    <!-- Carga del CMS desde jsDelivr (no unpkg) -->
+    <!-- Opción Decap CMS v3 -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <style>
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
@@ -17,22 +18,19 @@
   </head>
   <body>
     <script>
-      // Arranque seguro del CMS y del widget de login
       (function () {
         function start() {
           try {
             if (window.CMS) {
-              // Inicializa el CMS (tomará /admin/config.yml por defecto)
-              window.CMS.init();
+              window.CMS.init(); // usa /admin/config.yml por defecto
             } else {
-              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar Netlify CMS.</p>";
+              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar Netlify/Decap CMS.</p>";
             }
           } catch (e) {
             document.body.innerHTML = "<pre style='white-space:pre-wrap;padding:20px'>Error iniciando CMS:\n" + e.message + "</pre>";
           }
         }
 
-        // Cuando Identity esté listo, reintenta tras login si hace falta
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", (user) => {
             if (!user) {
@@ -41,7 +39,6 @@
           });
         }
 
-        // Inicia el CMS al cargar
         if (document.readyState === "loading") {
           document.addEventListener("DOMContentLoaded", start);
         } else {
@@ -51,3 +48,4 @@
     </script>
   </body>
 </html>
+
