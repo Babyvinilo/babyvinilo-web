@@ -1,10 +1,53 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Baby Vinilo CMS</title>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Baby Vinilo — Admin</title>
+
+    <!-- Widget de login de Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Netlify CMS (versión estable clásica) -->
+    <script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
+
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    </style>
   </head>
   <body>
+    <script>
+      // Arranque seguro del CMS y del widget de login
+      (function () {
+        function start() {
+          try {
+            if (window.CMS) {
+              // Inicializa el CMS (tomará /admin/config.yml por defecto)
+              window.CMS.init();
+            } else {
+              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar Netlify CMS.</p>";
+            }
+          } catch (e) {
+            document.body.innerHTML = "<pre style='white-space:pre-wrap;padding:20px'>Error iniciando CMS:\n" + e.message + "</pre>";
+          }
+        }
+
+        // Cuando Identity esté listo, reintenta tras login si hace falta
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => document.location.reload());
+            }
+          });
+        }
+
+        // Inicia el CMS al cargar
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", start);
+        } else {
+          start();
+        }
+      })();
+    </script>
   </body>
 </html>
