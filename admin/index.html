@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Baby Vinilo — Admin</title>
 
-    <!-- Login de Netlify Identity -->
+    <!-- Widget de login de Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Decap CMS v3 desde jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- ✅ Netlify CMS v2 (compatible con window.CMS) -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
 
     <style>
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
@@ -20,15 +20,14 @@
       (function () {
         function start() {
           try {
-            // Compatibilidad: Decap v3 usa window.DecapCms; Netlify CMS v2 usa window.CMS
-            var cms = window.DecapCms || window.CMS;
-            if (cms && typeof cms.init === "function") {
-              cms.init({ config: { load_config_file: true } }); // usa /admin/config.yml
+            if (window.CMS && typeof window.CMS.init === "function") {
+              window.CMS.init({ config: { load_config_file: true } });
             } else {
-              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar el CMS (Decap/CMS no está disponible).</p>";
+              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar Netlify CMS v2.</p>";
             }
           } catch (e) {
-            document.body.innerHTML = "<pre style='white-space:pre-wrap;padding:20px'>Error iniciando CMS:\n" + e.message + "</pre>";
+            document.body.innerHTML =
+              "<pre style='white-space:pre-wrap;padding:20px'>Error iniciando CMS:\n" + e.message + "</pre>";
           }
         }
 
@@ -49,5 +48,3 @@
     </script>
   </body>
 </html>
-
-
