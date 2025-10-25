@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Baby Vinilo — Admin</title>
 
-    <!-- Widget de login de Netlify Identity -->
+    <!-- Login de Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Carga del CMS desde jsDelivr (no unpkg) -->
-    <!-- Opción Decap CMS v3 -->
+    <!-- Decap CMS v3 desde jsDelivr -->
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <style>
@@ -21,10 +20,12 @@
       (function () {
         function start() {
           try {
-            if (window.CMS) {
-              window.CMS.init(); // usa /admin/config.yml por defecto
+            // Compatibilidad: Decap v3 usa window.DecapCms; Netlify CMS v2 usa window.CMS
+            var cms = window.DecapCms || window.CMS;
+            if (cms && typeof cms.init === "function") {
+              cms.init({ config: { load_config_file: true } }); // usa /admin/config.yml
             } else {
-              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar Netlify/Decap CMS.</p>";
+              document.body.innerHTML = "<p style='padding:20px'>No se pudo cargar el CMS (Decap/CMS no está disponible).</p>";
             }
           } catch (e) {
             document.body.innerHTML = "<pre style='white-space:pre-wrap;padding:20px'>Error iniciando CMS:\n" + e.message + "</pre>";
@@ -48,4 +49,5 @@
     </script>
   </body>
 </html>
+
 
